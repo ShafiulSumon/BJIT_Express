@@ -13,6 +13,8 @@
 		8496D6E72A022A0F00F47388 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8496D6E62A022A0F00F47388 /* Preview Assets.xcassets */; };
 		8496D6E92A022A0F00F47388 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8496D6E82A022A0F00F47388 /* Persistence.swift */; };
 		8496D6EC2A022A0F00F47388 /* BJIT_Express.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 8496D6EA2A022A0F00F47388 /* BJIT_Express.xcdatamodeld */; };
+		8496D6F32A022D0500F47388 /* StartingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8496D6F22A022D0500F47388 /* StartingView.swift */; };
+		8496D6F52A0259D200F47388 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8496D6F42A0259D200F47388 /* HomeView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -23,6 +25,8 @@
 		8496D6E62A022A0F00F47388 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		8496D6E82A022A0F00F47388 /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
 		8496D6EB2A022A0F00F47388 /* BJIT_Express.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = BJIT_Express.xcdatamodel; sourceTree = "<group>"; };
+		8496D6F22A022D0500F47388 /* StartingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartingView.swift; sourceTree = "<group>"; };
+		8496D6F42A0259D200F47388 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,6 +65,8 @@
 				8496D6E82A022A0F00F47388 /* Persistence.swift */,
 				8496D6EA2A022A0F00F47388 /* BJIT_Express.xcdatamodeld */,
 				8496D6E52A022A0F00F47388 /* Preview Content */,
+				8496D6F22A022D0500F47388 /* StartingView.swift */,
+				8496D6F42A0259D200F47388 /* HomeView.swift */,
 			);
 			path = BJIT_Express;
 			sourceTree = "<group>";
@@ -146,7 +152,9 @@
 				8496D6E92A022A0F00F47388 /* Persistence.swift in Sources */,
 				8496D6E22A022A0D00F47388 /* ContentView.swift in Sources */,
 				8496D6E02A022A0D00F47388 /* BJIT_ExpressApp.swift in Sources */,
+				8496D6F52A0259D200F47388 /* HomeView.swift in Sources */,
 				8496D6EC2A022A0F00F47388 /* BJIT_Express.xcdatamodeld in Sources */,
+				8496D6F32A022D0500F47388 /* StartingView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
