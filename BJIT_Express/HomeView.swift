@@ -67,10 +67,6 @@ struct HomeView: View {
 				List {
 					Section {
 						ForEach(dummyArray, id: \.self) { data in
-							if(data == "Bus-A") {
-								Text(data)
-									.in
-							}
 							Text(data)
 						}
 					} header: {
