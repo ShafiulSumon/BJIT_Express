@@ -7,8 +7,19 @@
 
 import SwiftUI
 import MapKit
+import Combine
 
 struct MapDetailsView: View {
+	
+	@StateObject private var mapDetailsVM = MapDetailsVM()
+	@StateObject private var locationManager = LocationManager()
+	@State var cancellable: AnyCancellable?
+	
+	func setLocation() {
+		cancellable = locationManager.$location.sink(receiveValue: { location in
+			region = MKCoordinateRegion(center: location?.coordinate ?? CLLocationCoordinate2D(), span: MKCoordinateSpan(latitudeDelta: 0.04, longitudeDelta: 0.04))
+		})
+	}
 	
 	@State private var region = MKCoordinateRegion(
 		center: CLLocationCoordinate2D(
@@ -16,15 +27,20 @@ struct MapDetailsView: View {
 			longitude: 90.42365144991554
 		),
 		span: MKCoordinateSpan(
-			latitudeDelta: 0.03,
-			longitudeDelta: 0.03
+			latitudeDelta: 0.04,
+			longitudeDelta: 0.04
 		)
 	)
-	
+
     var body: some View {
 		VStack {
-			Map(coordinateRegion: $region)
-				.ignoresSafeArea()
+			Map(coordinateRegion: $region, showsUserLocation: true, annotationItems: mapDetailsVM.mapLocations) { location in
+				MapMarker(coordinate: location.coordinate)
+			}
+			.ignoresSafeArea()
+		}
+		.onAppear() {
+			setLocation()
 		}
     }
 }
