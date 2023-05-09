@@ -58,8 +58,9 @@ struct HomeView: View {
 						.fontWeight(.light)
 						.padding(.leading, 16)
 					Spacer()
-					Button {
-						print("Goto map View")
+					
+					NavigationLink() {
+						MapDetailsView()
 					} label: {
 						VStack {
 							Spacer()
@@ -67,13 +68,12 @@ struct HomeView: View {
 								.resizable()
 								.frame(width: 30, height: 30)
 								.padding(8)
-							Text("Details")
+							Text("Show Map")
 								.padding(8)
 							Spacer()
 						}
 						.background(Color("customColor-1"))
 						.foregroundColor(.white)
-						//.padding(8)
 					}
 				}
 				.frame(height: 100)
