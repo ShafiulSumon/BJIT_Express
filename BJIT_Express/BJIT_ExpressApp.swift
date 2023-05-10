@@ -17,6 +17,7 @@ struct BJIT_ExpressApp: App {
 //                .environment(\.managedObjectContext, persistenceController.container.viewContext)
 			//StartingView()
 			HomeView()
+//			RouteOnMap()
         }
     }
 }

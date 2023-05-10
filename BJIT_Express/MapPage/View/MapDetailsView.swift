@@ -13,8 +13,10 @@ struct MapDetailsView: View {
 	
 	@StateObject private var mapDetailsVM = MapDetailsVM()
 	@StateObject private var locationManager = LocationManager()
-	@State var cancellable: AnyCancellable?
+	@State private var cancellable: AnyCancellable?
 	
+	
+	/// Here region is updating by user's current location.
 	func setLocation() {
 		cancellable = locationManager.$location.sink(receiveValue: { location in
 			region = MKCoordinateRegion(center: location?.coordinate ?? CLLocationCoordinate2D(), span: MKCoordinateSpan(latitudeDelta: 0.04, longitudeDelta: 0.04))
@@ -38,6 +40,12 @@ struct MapDetailsView: View {
 				MapMarker(coordinate: location.coordinate)
 			}
 			.ignoresSafeArea()
+			
+//			MapView(region: $region, destination: $mapDetailsVM.destination)
+//				.ignoresSafeArea()
+//
+//			Map
+			
 		}
 		.onAppear() {
 			setLocation()

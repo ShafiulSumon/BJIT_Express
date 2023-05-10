@@ -15,7 +15,7 @@ enum ButtonStatus: String {
 
 struct HomeView: View {
 	
-	@State private var arrivalTime: String = "7:28 AM"
+	@State private var arrivalTime: String = "7:32 AM"
 	@StateObject private var homeVM = HomeVM()
 	
 	var body: some View {

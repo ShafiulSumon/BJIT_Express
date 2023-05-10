@@ -25,6 +25,7 @@
 		8496D7172A0A098B00F47388 /* MapDetailsVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8496D7162A0A098B00F47388 /* MapDetailsVM.swift */; };
 		8496D71A2A0A09DB00F47388 /* MapLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8496D7192A0A09DB00F47388 /* MapLocation.swift */; };
 		8496D71D2A0A382400F47388 /* MapKit+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8496D71C2A0A382400F47388 /* MapKit+Ext.swift */; };
+		8496D71F2A0B434A00F47388 /* RouteOnMap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8496D71E2A0B434A00F47388 /* RouteOnMap.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -47,6 +48,7 @@
 		8496D7162A0A098B00F47388 /* MapDetailsVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapDetailsVM.swift; sourceTree = "<group>"; };
 		8496D7192A0A09DB00F47388 /* MapLocation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapLocation.swift; sourceTree = "<group>"; };
 		8496D71C2A0A382400F47388 /* MapKit+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MapKit+Ext.swift"; sourceTree = "<group>"; };
+		8496D71E2A0B434A00F47388 /* RouteOnMap.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouteOnMap.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -92,6 +94,7 @@
 				8496D6FC2A04F27D00F47388 /* HomePage */,
 				8496D7052A05094100F47388 /* DetailsPage */,
 				8496D70E2A08A31F00F47388 /* MapPage */,
+				8496D71E2A0B434A00F47388 /* RouteOnMap.swift */,
 			);
 			path = BJIT_Express;
 			sourceTree = "<group>";
@@ -313,6 +316,7 @@
 				8496D7172A0A098B00F47388 /* MapDetailsVM.swift in Sources */,
 				8496D7072A050A2900F47388 /* DetailsView.swift in Sources */,
 				8496D6E92A022A0F00F47388 /* Persistence.swift in Sources */,
+				8496D71F2A0B434A00F47388 /* RouteOnMap.swift in Sources */,
 				8496D6E22A022A0D00F47388 /* ContentView.swift in Sources */,
 				8496D6E02A022A0D00F47388 /* BJIT_ExpressApp.swift in Sources */,
 				8496D7042A0500FF00F47388 /* ButtonInfo.swift in Sources */,
