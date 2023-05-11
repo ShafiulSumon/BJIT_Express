@@ -9,15 +9,18 @@ import SwiftUI
 
 @main
 struct BJIT_ExpressApp: App {
-    let persistenceController = PersistenceController.shared
 
+	@StateObject var persistenceController = PersistenceController()
+	
     var body: some Scene {
         WindowGroup {
 //            ContentView()
 //                .environment(\.managedObjectContext, persistenceController.container.viewContext)
 			//StartingView()
-			HomeView()
+//			HomeView()
 //			RouteOnMap()
+			MotherView()
+				.environment(\.managedObjectContext, persistenceController.container.viewContext)
         }
     }
 }

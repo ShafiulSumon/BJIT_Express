@@ -15,8 +15,11 @@ enum ButtonStatus: String {
 
 struct HomeView: View {
 	
+	@Environment(\.managedObjectContext) private var moc
+	@FetchRequest(sortDescriptors: []) private var employee: FetchedResults<ExpressTable>
 	@State private var arrivalTime: String = "7:32 AM"
 	@StateObject private var homeVM = HomeVM()
+	@State private var user: String = "Unknown"
 	
 	var body: some View {
 		NavigationView {
@@ -29,7 +32,7 @@ struct HomeView: View {
 						.bold()
 					Spacer()
 					HStack {
-						Text("Dear, Md Shafiul Alam")
+						Text("Dear, \(user)")
 							.font(.body)
 							.foregroundColor(.gray)
 							.fixedSize(horizontal: false, vertical: true)
@@ -113,6 +116,10 @@ struct HomeView: View {
 				}
 				.listStyle(.insetGrouped)
 			}
+		}
+		.navigationBarBackButtonHidden()
+		.onAppear {
+			user = employee.last?.employee_id ?? "Unknown"
 		}
 	}
 }
