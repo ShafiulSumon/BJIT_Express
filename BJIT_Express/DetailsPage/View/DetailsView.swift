@@ -9,7 +9,7 @@ import SwiftUI
 
 struct DetailsView: View {
 	@StateObject private var detailsVM = DetailsVM()
-	var available: ButtonStatus
+	var data: BusInfo
 	
     var body: some View {
 		ZStack {
@@ -19,7 +19,7 @@ struct DetailsView: View {
 			VStack {
 				//Spacer().frame(height: 20)
 				HStack {
-					Text("Available Seats: 17(out of 50)")
+					Text("Available Seats: \(data.availableSeats)(out of 50)")
 						.foregroundColor(.white)
 						.font(.title3)
 						.bold()
@@ -29,7 +29,17 @@ struct DetailsView: View {
 					Button {
 						// do something
 					} label: {
-						ButtonInfo(data: available)
+						if(!data.isAvailable) {
+							ButtonInfo(data: .unavailable)
+						}
+						else {
+							if(data.checkIn) {
+								ButtonInfo(data: .checkOut)
+							}
+							else {
+								ButtonInfo(data: .checkIn)
+							}
+						}
 					}
 
 				}
@@ -39,7 +49,7 @@ struct DetailsView: View {
 
 				List {
 					Section {
-						ForEach(detailsVM.peoplesInBus, id: \.self) { people in
+						ForEach(data.passengers, id: \.self) { people in
 							Text(people)
 						}
 						.listRowBackground(Color.clear)
@@ -60,6 +70,6 @@ struct DetailsView: View {
 
 struct DetailsView_Previews: PreviewProvider {
     static var previews: some View {
-		DetailsView(available: .unavailable)
+		DetailsView(data: BusInfo())
     }
 }

@@ -17,9 +17,9 @@ struct HomeView: View {
 	
 	@Environment(\.managedObjectContext) private var moc
 	@FetchRequest(sortDescriptors: []) private var employee: FetchedResults<ExpressTable>
-	@State private var arrivalTime: String = "7:32 AM"
+	@State private var arrivalTime: String = "7:34 AM"
 	@StateObject private var homeVM = HomeVM()
-	@State private var user: String = "Unknown"
+	@State private var user: String = "Employee"
 	
 	var body: some View {
 		NavigationView {
@@ -87,27 +87,22 @@ struct HomeView: View {
 //			MARK: - Available Bus List
 				List {
 					Section {
-						ForEach(homeVM.dummyArray, id: \.self) { data in
+						ForEach(homeVM.BusArray, id: \.self) { data in
 							NavigationLink {
-								if(data == "Bus-A") {
-									DetailsView(available: .unavailable)
-								}
-								else if(data == "Bus-B") {
-									DetailsView(available: .checkOut)
-								}
-								else {
-									DetailsView(available: .checkIn)
-								}
+//								if(!data.isAvailable) {
+//									DetailsView(available: .unavailable)
+//								}
+//								else {
+//									if(data.checkIn) {
+//										DetailsView(available: .checkOut)
+//									}
+//									else {
+//										DetailsView(available: .checkIn)
+//									}
+//								}
+								DetailsView(data: data)
 							} label: {
-								if(data == "Bus-A") {
-									CellView(data: data, available: -1)
-								}
-								else if(data == "Bus-B") {
-									CellView(data: data, available: 0)
-								}
-								else {
-									CellView(data: data, available: 1)
-								}
+								CellView(data: data)
 							}
 													}
 					} header: {
@@ -119,7 +114,7 @@ struct HomeView: View {
 		}
 		.navigationBarBackButtonHidden()
 		.onAppear {
-			user = employee.last?.employee_id ?? "Unknown"
+			user = employee.last?.employee_id ?? "Employee"
 		}
 	}
 }

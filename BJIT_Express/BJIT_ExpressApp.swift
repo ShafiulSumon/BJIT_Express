@@ -14,11 +14,6 @@ struct BJIT_ExpressApp: App {
 	
     var body: some Scene {
         WindowGroup {
-//            ContentView()
-//                .environment(\.managedObjectContext, persistenceController.container.viewContext)
-			//StartingView()
-//			HomeView()
-//			RouteOnMap()
 			MotherView()
 				.environment(\.managedObjectContext, persistenceController.container.viewContext)
         }

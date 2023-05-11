@@ -26,6 +26,7 @@
 		8496D7492A0CB62F00F47388 /* BJIT_Express.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 8496D7472A0CB62F00F47388 /* BJIT_Express.xcdatamodeld */; };
 		8496D74B2A0CB66400F47388 /* PersistenceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8496D74A2A0CB66400F47388 /* PersistenceController.swift */; };
 		8496D74D2A0CB80700F47388 /* MotherView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8496D74C2A0CB80700F47388 /* MotherView.swift */; };
+		8496D7512A0CEEF700F47388 /* BusInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8496D7502A0CEEF700F47388 /* BusInfo.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -49,6 +50,7 @@
 		8496D7482A0CB62F00F47388 /* BJIT_Express.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = BJIT_Express.xcdatamodel; sourceTree = "<group>"; };
 		8496D74A2A0CB66400F47388 /* PersistenceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistenceController.swift; sourceTree = "<group>"; };
 		8496D74C2A0CB80700F47388 /* MotherView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MotherView.swift; sourceTree = "<group>"; };
+		8496D7502A0CEEF700F47388 /* BusInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusInfo.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,7 +87,6 @@
 				8496D74C2A0CB80700F47388 /* MotherView.swift */,
 				8496D71B2A0A37F900F47388 /* Extensions */,
 				8496D7122A09F36900F47388 /* Utils */,
-				8496D6FE2A04F29500F47388 /* Model */,
 				8496D6FA2A04F1C000F47388 /* StartingPage */,
 				8496D6FC2A04F27D00F47388 /* HomePage */,
 				8496D7052A05094100F47388 /* DetailsPage */,
@@ -126,6 +127,7 @@
 		8496D6FC2A04F27D00F47388 /* HomePage */ = {
 			isa = PBXGroup;
 			children = (
+				8496D6FE2A04F29500F47388 /* Model */,
 				8496D6FF2A04F2C000F47388 /* ViewModel */,
 				8496D6FD2A04F28600F47388 /* View */,
 			);
@@ -144,6 +146,7 @@
 		8496D6FE2A04F29500F47388 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				8496D7502A0CEEF700F47388 /* BusInfo.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -322,6 +325,7 @@
 				8496D74D2A0CB80700F47388 /* MotherView.swift in Sources */,
 				8496D70D2A089DE800F47388 /* DetailsVM.swift in Sources */,
 				8496D6F52A0259D200F47388 /* HomeView.swift in Sources */,
+				8496D7512A0CEEF700F47388 /* BusInfo.swift in Sources */,
 				8496D71D2A0A382400F47388 /* MapKit+Ext.swift in Sources */,
 				8496D6F32A022D0500F47388 /* StartingView.swift in Sources */,
 				8496D7142A09F38600F47388 /* LocationManager.swift in Sources */,
