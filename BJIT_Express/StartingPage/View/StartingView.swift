@@ -10,8 +10,8 @@ import CoreData
 
 struct StartingView: View {
 	
-	var colorOne = Color(.white)
-	var colorTwo = Color("customColor-2")
+	private var colorOne = Color(.white)
+	private var colorTwo = Color("customColor-2")
 	
 	@State private var showAlert: Bool = false
 	@State private var employeeId: String = ""
@@ -26,7 +26,7 @@ struct StartingView: View {
 			try moc.save()
 		}
 		catch {
-			print("Can't save on CoreData")
+			fatalError("Can't save on CoreData")
 		}
 	}
 	
@@ -51,11 +51,11 @@ struct StartingView: View {
 							.cornerRadius(40)
 							.padding(.top, -40)
 						// ------- End ---------
+							.ignoresSafeArea()
 						
 						Text("Welcome to BJIT Express")
 							.font(.largeTitle)
 							.bold()
-						//						.foregroundColor(Color(red: 7/255, green: 10/255, blue: 82/255))
 							.foregroundColor(Color("customColor-1"))
 							.multilineTextAlignment(.center)
 						Text("For the first time we need your employee id")
@@ -88,7 +88,7 @@ struct StartingView: View {
 								.background(.black)
 								.cornerRadius(30)
 						}
-						.alert("Sorry!", isPresented: $showAlert, actions: {}) {
+						.alert("Opps!", isPresented: $showAlert, actions: {}) {
 							Text("Please enter your BJIT's employee ID")
 						}
 
