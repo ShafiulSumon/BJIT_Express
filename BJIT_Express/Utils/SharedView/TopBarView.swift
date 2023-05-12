@@ -19,11 +19,11 @@ struct TopBarView: View {
 			Spacer()
 			HStack {
 				Text("Dear, \(user)")
-					//.fixedSize(horizontal: true, vertical: true)
+					.fixedSize(horizontal: false, vertical: true)
 					.font(.system(size: 14))
 					.foregroundColor(.gray)
-//					.lineLimit(2)
-//					.multilineTextAlignment(.trailing)
+					.lineLimit(nil)
+					.multilineTextAlignment(.trailing)
 				Image(systemName: "person.circle.fill")
 					.resizable()
 					.aspectRatio(contentMode: .fit)
@@ -35,7 +35,6 @@ struct TopBarView: View {
 		.padding()
 		.background(Color("customColor-3"))
 		.foregroundColor(.white)
-		.frame(maxWidth: .infinity)
     }
 }
 

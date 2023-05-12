@@ -17,7 +17,7 @@ struct DetailsView: View {
     var body: some View {
 		ZStack {
 			LinearGradient(gradient: Gradient(colors: [ Color("customColor-2"), .white]), startPoint: .topLeading, endPoint: .bottomTrailing)
-//				.ignoresSafeArea()
+				.ignoresSafeArea()
 
 			VStack {
 				TopBarView(user: user)
@@ -96,7 +96,6 @@ struct DetailsView: View {
 				.zIndex(100)
 			}
 			.navigationBarBackButtonHidden()
-//			.navigationBarTitle("Details")
 		}
     }
 }

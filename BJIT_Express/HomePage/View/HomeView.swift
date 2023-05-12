@@ -26,10 +26,7 @@ struct HomeView: View {
 			VStack(spacing: 0) {
 				
 //			MARK: - TopBarView
-				Spacer()
 				TopBarView(user: user)
-//					.padding(.top)
-				//Spacer().frame(height: 50)
 				
 				
 //			MARK: - Estimated time section
@@ -66,11 +63,11 @@ struct HomeView: View {
 				List {
 					Section {
 						ForEach(homeVM.BusArray, id: \.self) { data in
-//							NavigationLink {
-//								DetailsView(data: data, user: user)
-//							} label: {
-								CellView(data: data, user: user)
-//							}
+							NavigationLink {
+								DetailsView(data: data, user: user)
+							} label: {
+								CellView(data: data)
+							}
 													}
 					} header: {
 						Text("Available Bus")

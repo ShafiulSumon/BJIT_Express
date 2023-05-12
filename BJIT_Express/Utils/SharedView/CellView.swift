@@ -9,8 +9,7 @@ import SwiftUI
 
 struct CellView: View {
 	
-	var data: BusInfo
-	let user: String
+	let data: BusInfo
 	
 	private var hour: Int {
 		return data.busDepartureTime/100
@@ -18,7 +17,6 @@ struct CellView: View {
 	private var minute: Int {
 		return data.busDepartureTime%100
 	}
-	@State private var next: Bool = false
 	
 	var body: some View {
 		VStack {
@@ -47,7 +45,7 @@ struct CellView: View {
 				
 				
 				Button {
-					next.toggle()
+					// do something
 				} label: {
 					if(!data.isAvailable) {
 						ButtonInfo(data: .unavailable)
@@ -63,14 +61,6 @@ struct CellView: View {
 				}
 			}
 			Spacer().frame(height: 16)
-		
-//			NavigationLink(isActive: $next, destination: DetailsView(data: data, user: user), label: {
-//				EmptyView()
-//			})
-//			NavigationLink(destination: DetailsView(data: data, user: user), isActive: $next) {
-//				EmptyView()
-//			}
-			
 		}
 		.disabled(data.isAvailable ? true : false)
 	}
@@ -78,6 +68,6 @@ struct CellView: View {
 
 struct CellView_Previews: PreviewProvider {
     static var previews: some View {
-		CellView(data: BusInfo(), user: "Unknown")
+		CellView(data: BusInfo())
     }
 }
