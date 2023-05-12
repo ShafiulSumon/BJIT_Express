@@ -19,9 +19,6 @@ struct MotherView: View {
 		else {
 			HomeView()
 		}
-//		NavigationView {
-//		}
-//		.navigationBarBackButtonHidden()
     }
 }
 

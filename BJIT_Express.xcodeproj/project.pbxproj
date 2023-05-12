@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		844D10982A0E0E63003F5840 /* HomeView2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844D10972A0E0E63003F5840 /* HomeView2.swift */; };
+		844D109A2A0E3CF1003F5840 /* TopBarView2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844D10992A0E3CF1003F5840 /* TopBarView2.swift */; };
 		8496D6E02A022A0D00F47388 /* BJIT_ExpressApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8496D6DF2A022A0D00F47388 /* BJIT_ExpressApp.swift */; };
 		8496D6E42A022A0F00F47388 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8496D6E32A022A0F00F47388 /* Assets.xcassets */; };
 		8496D6E72A022A0F00F47388 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8496D6E62A022A0F00F47388 /* Preview Assets.xcassets */; };
@@ -27,9 +29,12 @@
 		8496D74B2A0CB66400F47388 /* PersistenceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8496D74A2A0CB66400F47388 /* PersistenceController.swift */; };
 		8496D74D2A0CB80700F47388 /* MotherView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8496D74C2A0CB80700F47388 /* MotherView.swift */; };
 		8496D7512A0CEEF700F47388 /* BusInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8496D7502A0CEEF700F47388 /* BusInfo.swift */; };
+		8496D7542A0DE3B700F47388 /* TopBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8496D7532A0DE3B700F47388 /* TopBarView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		844D10972A0E0E63003F5840 /* HomeView2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView2.swift; sourceTree = "<group>"; };
+		844D10992A0E3CF1003F5840 /* TopBarView2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopBarView2.swift; sourceTree = "<group>"; };
 		8496D6DC2A022A0D00F47388 /* BJIT_Express.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BJIT_Express.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8496D6DF2A022A0D00F47388 /* BJIT_ExpressApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BJIT_ExpressApp.swift; sourceTree = "<group>"; };
 		8496D6E32A022A0F00F47388 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -51,6 +56,7 @@
 		8496D74A2A0CB66400F47388 /* PersistenceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistenceController.swift; sourceTree = "<group>"; };
 		8496D74C2A0CB80700F47388 /* MotherView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MotherView.swift; sourceTree = "<group>"; };
 		8496D7502A0CEEF700F47388 /* BusInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusInfo.swift; sourceTree = "<group>"; };
+		8496D7532A0DE3B700F47388 /* TopBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopBarView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -137,8 +143,8 @@
 		8496D6FD2A04F28600F47388 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				8496D7002A04FD0200F47388 /* SubView */,
 				8496D6F42A0259D200F47388 /* HomeView.swift */,
+				844D10972A0E0E63003F5840 /* HomeView2.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -157,15 +163,6 @@
 				8496D6F82A04D87300F47388 /* HomeVM.swift */,
 			);
 			path = ViewModel;
-			sourceTree = "<group>";
-		};
-		8496D7002A04FD0200F47388 /* SubView */ = {
-			isa = PBXGroup;
-			children = (
-				8496D7012A04FD3F00F47388 /* CellView.swift */,
-				8496D7032A0500FF00F47388 /* ButtonInfo.swift */,
-			);
-			path = SubView;
 			sourceTree = "<group>";
 		};
 		8496D7052A05094100F47388 /* DetailsPage */ = {
@@ -214,6 +211,7 @@
 		8496D7122A09F36900F47388 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				8496D7522A0DE36E00F47388 /* SharedView */,
 				8496D7132A09F38600F47388 /* LocationManager.swift */,
 			);
 			path = Utils;
@@ -241,6 +239,17 @@
 				8496D71C2A0A382400F47388 /* MapKit+Ext.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		8496D7522A0DE36E00F47388 /* SharedView */ = {
+			isa = PBXGroup;
+			children = (
+				8496D7012A04FD3F00F47388 /* CellView.swift */,
+				8496D7032A0500FF00F47388 /* ButtonInfo.swift */,
+				8496D7532A0DE3B700F47388 /* TopBarView.swift */,
+				844D10992A0E3CF1003F5840 /* TopBarView2.swift */,
+			);
+			path = SharedView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -317,6 +326,7 @@
 				8496D71A2A0A09DB00F47388 /* MapLocation.swift in Sources */,
 				8496D7112A08A3AA00F47388 /* MapDetailsView.swift in Sources */,
 				8496D7172A0A098B00F47388 /* MapDetailsVM.swift in Sources */,
+				844D10982A0E0E63003F5840 /* HomeView2.swift in Sources */,
 				8496D7072A050A2900F47388 /* DetailsView.swift in Sources */,
 				8496D71F2A0B434A00F47388 /* RouteOnMap.swift in Sources */,
 				8496D6E02A022A0D00F47388 /* BJIT_ExpressApp.swift in Sources */,
@@ -328,6 +338,8 @@
 				8496D7512A0CEEF700F47388 /* BusInfo.swift in Sources */,
 				8496D71D2A0A382400F47388 /* MapKit+Ext.swift in Sources */,
 				8496D6F32A022D0500F47388 /* StartingView.swift in Sources */,
+				8496D7542A0DE3B700F47388 /* TopBarView.swift in Sources */,
+				844D109A2A0E3CF1003F5840 /* TopBarView2.swift in Sources */,
 				8496D7142A09F38600F47388 /* LocationManager.swift in Sources */,
 				8496D7492A0CB62F00F47388 /* BJIT_Express.xcdatamodeld in Sources */,
 				8496D74B2A0CB66400F47388 /* PersistenceController.swift in Sources */,

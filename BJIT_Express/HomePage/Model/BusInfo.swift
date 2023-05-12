@@ -24,7 +24,7 @@ struct Buses {
 			availableSeats: 47,
 			isAvailable: false,
 			checkIn: false,
-			passengers: ["Mr. A", "Mr. B", "Mr. C"]
+			passengers: ["Mr. A", "Mr. B", "Mr. C", "Mr. A", "Mr. B", "Mr. C", "Mr. A", "Mr. B", "Mr. C", "Mr. A", "Mr. B", "Mr. C", "Mr. A", "Mr. B", "Mr. C"]
 		),
 		BusInfo(
 			busId: "Bus-B",

@@ -25,32 +25,10 @@ struct HomeView: View {
 		NavigationView {
 			VStack(spacing: 0) {
 				
-//			MARK: - TopBar View
-				HStack {
-					Text("BJIT Express")
-						.font(.title2)
-						.bold()
-					Spacer()
-					HStack {
-						Text("Dear, \(user)")
-							.font(.body)
-							.foregroundColor(.gray)
-							.fixedSize(horizontal: false, vertical: true)
-							.lineLimit(nil)
-							.multilineTextAlignment(.trailing)
-						Image(systemName: "person.circle.fill")
-							.resizable()
-							.aspectRatio(contentMode: .fill)
-							.frame(width: 25, height: 25, alignment: .center)
-					}
-					.padding()
-				}
-				.frame(height: 50)
-				.padding()
-				.background(Color("customColor-1"))
-				.foregroundColor(.white)
-				.frame(maxWidth: .infinity)
-				
+//			MARK: - TopBarView
+				Spacer()
+				TopBarView(user: user)
+//					.padding(.top)
 				//Spacer().frame(height: 50)
 				
 				
@@ -61,7 +39,7 @@ struct HomeView: View {
 						.fontWeight(.light)
 						.padding(.leading, 16)
 					Spacer()
-					
+
 					NavigationLink() {
 						MapDetailsView()
 					} label: {
@@ -75,35 +53,24 @@ struct HomeView: View {
 								.padding(8)
 							Spacer()
 						}
-						.background(Color("customColor-1"))
+						.background(Color("customColor-4"))
 						.foregroundColor(.white)
 					}
 				}
-				.frame(height: 100)
+				.frame(height: 110)
 				.border(.white)
 				.background(Color("customColor-2"))
-				
+
 
 //			MARK: - Available Bus List
 				List {
 					Section {
 						ForEach(homeVM.BusArray, id: \.self) { data in
-							NavigationLink {
-//								if(!data.isAvailable) {
-//									DetailsView(available: .unavailable)
-//								}
-//								else {
-//									if(data.checkIn) {
-//										DetailsView(available: .checkOut)
-//									}
-//									else {
-//										DetailsView(available: .checkIn)
-//									}
-//								}
-								DetailsView(data: data)
-							} label: {
-								CellView(data: data)
-							}
+//							NavigationLink {
+//								DetailsView(data: data, user: user)
+//							} label: {
+								CellView(data: data, user: user)
+//							}
 													}
 					} header: {
 						Text("Available Bus")
@@ -112,7 +79,6 @@ struct HomeView: View {
 				.listStyle(.insetGrouped)
 			}
 		}
-		.navigationBarBackButtonHidden()
 		.onAppear {
 			user = employee.last?.employee_id ?? "Employee"
 		}

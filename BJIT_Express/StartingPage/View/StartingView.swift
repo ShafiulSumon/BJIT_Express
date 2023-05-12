@@ -31,11 +31,11 @@ struct StartingView: View {
 	}
 	
     var body: some View {
-		NavigationView {
+//		NavigationView {
 			GeometryReader { geometry in
 				ZStack {
 					LinearGradient(gradient: Gradient(colors: [colorOne, colorTwo]), startPoint: .topLeading, endPoint: .bottomTrailing)
-						.ignoresSafeArea()
+//						.ignoresSafeArea()
 					
 					VStack {
 						Image("bg-2")
@@ -56,7 +56,7 @@ struct StartingView: View {
 						Text("Welcome to BJIT Express")
 							.font(.largeTitle)
 							.bold()
-							.foregroundColor(Color("customColor-1"))
+							.foregroundColor(Color("customColor-4"))
 							.multilineTextAlignment(.center)
 						Text("For the first time we need your employee id")
 							.font(.body)
@@ -85,7 +85,7 @@ struct StartingView: View {
 									width: geometry.size.width * 0.9,
 									height: 60)
 								.foregroundColor(.white)
-								.background(.black)
+								.background(Color("customColor-3"))
 								.cornerRadius(30)
 						}
 						.alert("Opps!", isPresented: $showAlert, actions: {}) {
@@ -96,8 +96,9 @@ struct StartingView: View {
 					}
 				}
 			}
-		}
-		.navigationBarBackButtonHidden()
+//		}
+//		.navigationBarBackButtonHidden()
+//		.navigationBarTitleDisplayMode(.inline)
     }
 }
 

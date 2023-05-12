@@ -8,26 +8,29 @@
 import SwiftUI
 
 struct DetailsView: View {
+	
+	@Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
 	@StateObject private var detailsVM = DetailsVM()
 	var data: BusInfo
+	var user: String
 	
     var body: some View {
 		ZStack {
-			LinearGradient(gradient: Gradient(colors: [.teal, .cyan, Color("customColor-1")]), startPoint: .top, endPoint: .bottom)
-				.ignoresSafeArea()
+			LinearGradient(gradient: Gradient(colors: [ Color("customColor-2"), .white]), startPoint: .topLeading, endPoint: .bottomTrailing)
+//				.ignoresSafeArea()
 
 			VStack {
-				//Spacer().frame(height: 20)
+				TopBarView(user: user)
+				
 				HStack {
 					Text("Available Seats: \(data.availableSeats)(out of 50)")
-						.foregroundColor(.white)
 						.font(.title3)
 						.bold()
 
 					Spacer()
 
 					Button {
-						// do something
+						//print("DetailsView")
 					} label: {
 						if(!data.isAvailable) {
 							ButtonInfo(data: .unavailable)
@@ -41,35 +44,65 @@ struct DetailsView: View {
 							}
 						}
 					}
-
 				}
 				.padding()
 
 				Spacer()
-
-				List {
-					Section {
-						ForEach(data.passengers, id: \.self) { people in
-							Text(people)
-						}
-						.listRowBackground(Color.clear)
-						.foregroundColor(.black)
-						.font(.system(size: 22, weight: .semibold, design: .default))
-					} header: {
-						Text("People are in this bus")
-					}
-
+				
+				if(data.passengers.isEmpty) {
+					Image(systemName: "figure.walk.motion")
+						.resizable()
+						.frame(width: 120, height: 180)
+						.foregroundColor(Color("customColor-3"))
+					Spacer()
 				}
-				.scrollContentBackground(.hidden)
+				else {
+					List {
+						Section {
+							ForEach(data.passengers, id: \.self) { people in
+								Text(people)
+							}
+							.listRowBackground(Color.clear)
+							.foregroundColor(.black)
+							.font(.system(size: 22, weight: .semibold, design: .default))
+						} header: {
+							Text("People are in this bus")
+						}
+						
+					}
+					.scrollContentBackground(.hidden)
+				}
 				
 			}
-			.navigationBarTitle("Details")
+			
+			VStack {
+				Spacer()
+				HStack {
+					Spacer()
+					Button(action: {
+						self.presentationMode.wrappedValue.dismiss()
+					}, label: {
+						Image(systemName: "chevron.left")
+							.aspectRatio(contentMode: .fill)
+							.frame(width: 60, height: 60)
+							.background(Color("customColor-4"))
+							.foregroundColor(.white)
+							.cornerRadius(30)
+							.padding()
+					})
+					.padding()
+					Spacer().frame(width: 24)
+				}
+				.zIndex(100)
+			}
+			.navigationBarBackButtonHidden()
+//			.navigationBarTitle("Details")
 		}
     }
 }
 
 struct DetailsView_Previews: PreviewProvider {
     static var previews: some View {
-		DetailsView(data: BusInfo())
+		DetailsView(data: BusInfo(), user: "Unknown")
     }
 }
