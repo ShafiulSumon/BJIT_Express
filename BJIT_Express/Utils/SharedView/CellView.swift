@@ -9,13 +9,14 @@ import SwiftUI
 
 struct CellView: View {
 	
-	let data: BusInfo
+	@Binding var data: BusInfo
 	
 	private var hour: Int {
 		return data.busDepartureTime/100
 	}
-	private var minute: Int {
-		return data.busDepartureTime%100
+	private var minute: String {
+		let min = data.busDepartureTime%100
+		return String(format: "%02d", min)
 	}
 	
 	var body: some View {
@@ -27,7 +28,7 @@ struct CellView: View {
 					.bold()
 					.foregroundColor(!data.isAvailable ? .gray : .black)
 				
-				Spacer()
+				Spacer().frame(width: 60)
 				
 				VStack {
 					Text("\(data.availableSeats)/50")
@@ -44,20 +45,17 @@ struct CellView: View {
 				Spacer()
 				
 				
-				Button {
-					// do something
-				} label: {
-					if(!data.isAvailable) {
-						ButtonInfo(data: .unavailable)
-					}
-					else {
-						if(data.checkIn) {
-							ButtonInfo(data: .checkOut)
-						}
-						else {
-							ButtonInfo(data: .checkIn)
-						}
-					}
+				if(data.isAvailable) {
+					Text(data.checkIn ? "Check-Out" : "Check-In")
+						.font(.caption)
+						.fontWeight(.black)
+						.foregroundColor(data.checkIn ? .red : .green)
+						.shadow(radius: 0.8)
+				}
+				else {
+					Text("Not Avilable")
+						.font(.caption)
+						.fontWeight(.black)
 				}
 			}
 			Spacer().frame(height: 16)
@@ -68,6 +66,6 @@ struct CellView: View {
 
 struct CellView_Previews: PreviewProvider {
     static var previews: some View {
-		CellView(data: BusInfo())
+		CellView(data: .constant(BusInfo()))
     }
 }

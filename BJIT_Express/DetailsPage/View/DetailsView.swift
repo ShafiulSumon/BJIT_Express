@@ -11,7 +11,7 @@ struct DetailsView: View {
 	
 	@Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
 	@StateObject private var detailsVM = DetailsVM()
-	var data: BusInfo
+	@Binding var data: BusInfo
 	var user: String
 	
     var body: some View {
@@ -31,6 +31,9 @@ struct DetailsView: View {
 
 					Button {
 						//print("DetailsView")
+						if(data.isAvailable) {
+							data.checkIn.toggle()
+						}
 					} label: {
 						if(!data.isAvailable) {
 							ButtonInfo(data: .unavailable)
@@ -89,6 +92,7 @@ struct DetailsView: View {
 							.foregroundColor(.white)
 							.cornerRadius(30)
 							.padding()
+							.shadow(color: .gray, radius: 7, x: 7, y: 7)
 					})
 					.padding()
 					Spacer().frame(width: 24)
@@ -102,6 +106,6 @@ struct DetailsView: View {
 
 struct DetailsView_Previews: PreviewProvider {
     static var previews: some View {
-		DetailsView(data: BusInfo(), user: "Unknown")
+		DetailsView(data: .constant(BusInfo()), user: "Unknown")
     }
 }

@@ -62,13 +62,13 @@ struct HomeView: View {
 //			MARK: - Available Bus List
 				List {
 					Section {
-						ForEach(homeVM.BusArray, id: \.self) { data in
+						ForEach(0..<homeVM.BusArray.count, id: \.self) { index in
 							NavigationLink {
-								DetailsView(data: data, user: user)
+								DetailsView(data: $homeVM.BusArray[index], user: user)
 							} label: {
-								CellView(data: data)
+								CellView(data: $homeVM.BusArray[index])
 							}
-													}
+						}
 					} header: {
 						Text("Available Bus")
 					}

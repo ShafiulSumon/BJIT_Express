@@ -70,7 +70,7 @@ struct MapView: UIViewRepresentable {
 		
 		mapView.delegate = context.coordinator
 		
-		let region = MKCoordinateRegion(
+		var region = MKCoordinateRegion(
 			center: CLLocationCoordinate2D(
 				latitude: 40.71,
 				longitude: -74

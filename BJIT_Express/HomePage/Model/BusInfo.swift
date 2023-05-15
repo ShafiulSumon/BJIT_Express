@@ -44,7 +44,7 @@ struct Buses {
 		),
 		BusInfo(
 			busId: "Bus-D",
-			busDepartureTime: 810,
+			busDepartureTime: 805,
 			availableSeats: 50,
 			isAvailable: true,
 			checkIn: false,
