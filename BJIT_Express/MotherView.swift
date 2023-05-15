@@ -14,7 +14,7 @@ struct MotherView: View {
 	
     var body: some View {
 		if employee.isEmpty {
-			StartingView()
+			OnboardingView()
 		}
 		else {
 			HomeView()

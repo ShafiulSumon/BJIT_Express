@@ -10,7 +10,7 @@
 		8496D6E02A022A0D00F47388 /* BJIT_ExpressApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8496D6DF2A022A0D00F47388 /* BJIT_ExpressApp.swift */; };
 		8496D6E42A022A0F00F47388 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8496D6E32A022A0F00F47388 /* Assets.xcassets */; };
 		8496D6E72A022A0F00F47388 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8496D6E62A022A0F00F47388 /* Preview Assets.xcassets */; };
-		8496D6F32A022D0500F47388 /* StartingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8496D6F22A022D0500F47388 /* StartingView.swift */; };
+		8496D6F32A022D0500F47388 /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8496D6F22A022D0500F47388 /* OnboardingView.swift */; };
 		8496D6F52A0259D200F47388 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8496D6F42A0259D200F47388 /* HomeView.swift */; };
 		8496D6F92A04D87300F47388 /* HomeVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8496D6F82A04D87300F47388 /* HomeVM.swift */; };
 		8496D7022A04FD3F00F47388 /* CellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8496D7012A04FD3F00F47388 /* CellView.swift */; };
@@ -35,7 +35,7 @@
 		8496D6DF2A022A0D00F47388 /* BJIT_ExpressApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BJIT_ExpressApp.swift; sourceTree = "<group>"; };
 		8496D6E32A022A0F00F47388 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8496D6E62A022A0F00F47388 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		8496D6F22A022D0500F47388 /* StartingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartingView.swift; sourceTree = "<group>"; };
+		8496D6F22A022D0500F47388 /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
 		8496D6F42A0259D200F47388 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		8496D6F82A04D87300F47388 /* HomeVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVM.swift; sourceTree = "<group>"; };
 		8496D7012A04FD3F00F47388 /* CellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellView.swift; sourceTree = "<group>"; };
@@ -89,7 +89,7 @@
 				8496D74C2A0CB80700F47388 /* MotherView.swift */,
 				8496D71B2A0A37F900F47388 /* Extensions */,
 				8496D7122A09F36900F47388 /* Utils */,
-				8496D6FA2A04F1C000F47388 /* StartingPage */,
+				8496D6FA2A04F1C000F47388 /* OnboardingPage */,
 				8496D6FC2A04F27D00F47388 /* HomePage */,
 				8496D7052A05094100F47388 /* DetailsPage */,
 				8496D70E2A08A31F00F47388 /* MapPage */,
@@ -110,18 +110,18 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
-		8496D6FA2A04F1C000F47388 /* StartingPage */ = {
+		8496D6FA2A04F1C000F47388 /* OnboardingPage */ = {
 			isa = PBXGroup;
 			children = (
 				8496D6FB2A04F1D700F47388 /* View */,
 			);
-			path = StartingPage;
+			path = OnboardingPage;
 			sourceTree = "<group>";
 		};
 		8496D6FB2A04F1D700F47388 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				8496D6F22A022D0500F47388 /* StartingView.swift */,
+				8496D6F22A022D0500F47388 /* OnboardingView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -330,7 +330,7 @@
 				8496D6F52A0259D200F47388 /* HomeView.swift in Sources */,
 				8496D7512A0CEEF700F47388 /* BusInfo.swift in Sources */,
 				8496D71D2A0A382400F47388 /* MapKit+Ext.swift in Sources */,
-				8496D6F32A022D0500F47388 /* StartingView.swift in Sources */,
+				8496D6F32A022D0500F47388 /* OnboardingView.swift in Sources */,
 				8496D7542A0DE3B700F47388 /* TopBarView.swift in Sources */,
 				8496D7142A09F38600F47388 /* LocationManager.swift in Sources */,
 				8496D7492A0CB62F00F47388 /* BJIT_Express.xcdatamodeld in Sources */,

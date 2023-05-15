@@ -21,6 +21,7 @@ struct HomeView: View {
 	@StateObject private var homeVM = HomeVM()
 	@State private var user: String = "Employee"
 	
+	@available(iOS 14.0, *)
 	var body: some View {
 		NavigationView {
 			VStack(spacing: 0) {
