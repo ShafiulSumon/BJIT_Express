@@ -8,58 +8,104 @@
 import SwiftUI
 
 struct DetailsView: View {
+	
+	@Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
 	@StateObject private var detailsVM = DetailsVM()
-	var available: ButtonStatus
+	@Binding var data: BusInfo
+	var user: String
 	
     var body: some View {
 		ZStack {
-			LinearGradient(gradient: Gradient(colors: [.teal, .cyan, Color("customColor-1")]), startPoint: .top, endPoint: .bottom)
+			LinearGradient(gradient: Gradient(colors: [ Color("customColor-2"), .white]), startPoint: .topLeading, endPoint: .bottomTrailing)
 				.ignoresSafeArea()
 
 			VStack {
-				//Spacer().frame(height: 20)
+				TopBarView(user: user)
+				
 				HStack {
-					Text("Available Seats: 17(out of 50)")
-						.foregroundColor(.white)
+					Text("Available Seats: \(data.availableSeats)(out of 50)")
 						.font(.title3)
 						.bold()
 
 					Spacer()
 
 					Button {
-						// do something
+						//print("DetailsView")
+						if(data.isAvailable) {
+							data.checkIn.toggle()
+						}
 					} label: {
-						ButtonInfo(data: available)
+						if(!data.isAvailable) {
+							ButtonInfo(data: .unavailable)
+						}
+						else {
+							if(data.checkIn) {
+								ButtonInfo(data: .checkOut)
+							}
+							else {
+								ButtonInfo(data: .checkIn)
+							}
+						}
 					}
-
 				}
 				.padding()
 
 				Spacer()
-
-				List {
-					Section {
-						ForEach(detailsVM.peoplesInBus, id: \.self) { people in
-							Text(people)
-						}
-						.listRowBackground(Color.clear)
-						.foregroundColor(.black)
-						.font(.system(size: 22, weight: .semibold, design: .default))
-					} header: {
-						Text("People are in this bus")
-					}
-
+				
+				if(data.passengers.isEmpty) {
+					Image(systemName: "figure.walk.motion")
+						.resizable()
+						.frame(width: 120, height: 180)
+						.foregroundColor(Color("customColor-3"))
+					Spacer()
 				}
-				.scrollContentBackground(.hidden)
+				else {
+					List {
+						Section {
+							ForEach(data.passengers, id: \.self) { people in
+								Text(people)
+							}
+							.listRowBackground(Color.clear)
+							.foregroundColor(.black)
+							.font(.system(size: 22, weight: .semibold, design: .default))
+						} header: {
+							Text("People are in this bus")
+						}
+						
+					}
+					.scrollContentBackground(.hidden)
+				}
 				
 			}
-			.navigationBarTitle("Details")
+			
+			VStack {
+				Spacer()
+				HStack {
+					Spacer()
+					Button(action: {
+						self.presentationMode.wrappedValue.dismiss()
+					}, label: {
+						Image(systemName: "chevron.left")
+							.aspectRatio(contentMode: .fill)
+							.frame(width: 60, height: 60)
+							.background(Color("customColor-4"))
+							.foregroundColor(.white)
+							.cornerRadius(30)
+							.padding()
+							.shadow(color: .gray, radius: 7, x: 7, y: 7)
+					})
+					.padding()
+					Spacer().frame(width: 24)
+				}
+				.zIndex(100)
+			}
+			.navigationBarBackButtonHidden()
 		}
     }
 }
 
 struct DetailsView_Previews: PreviewProvider {
     static var previews: some View {
-		DetailsView(available: .unavailable)
+		DetailsView(data: .constant(BusInfo()), user: "Unknown")
     }
 }

@@ -30,14 +30,12 @@ struct ButtonInfo: View {
 			.background(btnColor)
 			.foregroundColor(.white)
 			.cornerRadius(8)
-			.onTapGesture {
-				print(data.rawValue)
-			}
+			.shadow(color: .gray, radius: 7, x: 7, y: 7)
 	}
 }
 
 struct ButtonInfo_Previews: PreviewProvider {
     static var previews: some View {
-		ButtonInfo(data: .unavailable)
+		ButtonInfo(data: .checkIn)
     }
 }

@@ -14,7 +14,7 @@ class PersistenceController: ObservableObject {
 	init() {
 		container.loadPersistentStores { description, error in
 			if let error = error {
-				fatalError("CoreData Loading Failed!")
+				fatalError("CoreData Loading Failed!. Error: \(error)")
 			}
 		}
 	}
