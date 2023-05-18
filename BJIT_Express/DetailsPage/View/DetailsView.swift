@@ -30,7 +30,6 @@ struct DetailsView: View {
 					Spacer()
 
 					Button {
-						//print("DetailsView")
 						if(data.isAvailable) {
 							data.checkIn.toggle()
 						}

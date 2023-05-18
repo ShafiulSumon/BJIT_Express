@@ -28,7 +28,7 @@ struct CellView: View {
 					.bold()
 					.foregroundColor(!data.isAvailable ? .gray : .black)
 				
-				Spacer().frame(width: 60)
+				Spacer().frame(width: 50)
 				
 				VStack {
 					Text("\(data.availableSeats)/50")
@@ -43,7 +43,6 @@ struct CellView: View {
 				}
 				
 				Spacer()
-				
 				
 				if(data.isAvailable) {
 					Text(data.checkIn ? "Check-Out" : "Check-In")

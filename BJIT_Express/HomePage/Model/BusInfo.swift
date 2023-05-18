@@ -20,14 +20,22 @@ struct Buses {
 	static var buses: [BusInfo] = [
 		BusInfo(
 			busId: "Bus-A",
-			busDepartureTime: 730,
-			availableSeats: 47,
+			busDepartureTime: 720,
+			availableSeats: 35,
 			isAvailable: false,
 			checkIn: false,
 			passengers: ["Mr. A", "Mr. B", "Mr. C", "Mr. A", "Mr. B", "Mr. C", "Mr. A", "Mr. B", "Mr. C", "Mr. A", "Mr. B", "Mr. C", "Mr. A", "Mr. B", "Mr. C"]
 		),
 		BusInfo(
 			busId: "Bus-B",
+			busDepartureTime: 730,
+			availableSeats: 35,
+			isAvailable: false,
+			checkIn: false,
+			passengers: ["Mr. A", "Mr. B", "Mr. C", "Mr. A", "Mr. B", "Mr. C", "Mr. A", "Mr. B", "Mr. C", "Mr. A", "Mr. B", "Mr. C", "Mr. A", "Mr. B", "Mr. C"]
+		),
+		BusInfo(
+			busId: "Bus-C",
 			busDepartureTime: 740,
 			availableSeats: 47,
 			isAvailable: true,
@@ -35,7 +43,7 @@ struct Buses {
 			passengers: ["Mr. D", "Mr. E", "Mr. F"]
 		),
 		BusInfo(
-			busId: "Bus-C",
+			busId: "Bus-D",
 			busDepartureTime: 750,
 			availableSeats: 50,
 			isAvailable: true,
@@ -43,7 +51,7 @@ struct Buses {
 			passengers: []
 		),
 		BusInfo(
-			busId: "Bus-D",
+			busId: "Bus-E",
 			busDepartureTime: 805,
 			availableSeats: 50,
 			isAvailable: true,
