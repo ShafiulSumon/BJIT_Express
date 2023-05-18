@@ -10,5 +10,5 @@ import Foundation
 class HomeVM: ObservableObject {
 	
 	@Published var BusArray: [BusInfo] = Buses.buses
-	
+	@Published var alreadyInBus: Bool = false
 }

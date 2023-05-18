@@ -39,7 +39,7 @@ struct Buses {
 			busDepartureTime: 740,
 			availableSeats: 47,
 			isAvailable: true,
-			checkIn: true,
+			checkIn: false,
 			passengers: ["Mr. D", "Mr. E", "Mr. F"]
 		),
 		BusInfo(
