@@ -12,7 +12,11 @@ struct DetailsView: View {
 	@Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
 	@StateObject private var detailsVM = DetailsVM()
 	@Binding var data: BusInfo
+	@Binding var alreadyInBus: Bool
 	var user: String
+	
+	@State private var showAlert: Bool = false
+	
 	
     var body: some View {
 		ZStack {
@@ -30,8 +34,14 @@ struct DetailsView: View {
 					Spacer()
 
 					Button {
-						if(data.isAvailable) {
-							data.checkIn.toggle()
+						if(alreadyInBus && !data.checkIn) {
+							showAlert.toggle()
+						}
+						else {
+							if(data.isAvailable) {
+								data.checkIn.toggle()
+								alreadyInBus.toggle()
+							}
 						}
 					} label: {
 						if(!data.isAvailable) {
@@ -46,6 +56,11 @@ struct DetailsView: View {
 							}
 						}
 					}
+					.alert("Error", isPresented: $showAlert, actions: {
+						//
+					}, message: {
+						Text("You have already checkIN in another bus!")
+					})
 				}
 				.padding()
 
@@ -105,6 +120,6 @@ struct DetailsView: View {
 
 struct DetailsView_Previews: PreviewProvider {
     static var previews: some View {
-		DetailsView(data: .constant(BusInfo()), user: "Unknown")
+		DetailsView(data: .constant(BusInfo()), alreadyInBus: .constant(false), user: "Unknown")
     }
 }

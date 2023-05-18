@@ -65,7 +65,7 @@ struct HomeView: View {
 					Section {
 						ForEach(0..<homeVM.BusArray.count, id: \.self) { index in
 							NavigationLink {
-								DetailsView(data: $homeVM.BusArray[index], user: user)
+								DetailsView(data: $homeVM.BusArray[index], alreadyInBus: $homeVM.alreadyInBus, user: user)
 							} label: {
 								CellView(data: $homeVM.BusArray[index])
 							}
