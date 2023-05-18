@@ -12,7 +12,7 @@ import MapKit
 
 class MapDetailsVM: ObservableObject {
 
-	private var locationManager = LocationManager()
+	lazy private var locationManager = LocationManager()
 	var cancellable: AnyCancellable?
 	
 	@Published var region = MKCoordinateRegion(
