@@ -11,8 +11,9 @@ import SwiftUI
 
 final class LocationManager: NSObject, ObservableObject {
 	@Published var location: CLLocation?
+	@Published var insideNotunBazarArea: Bool = false
 	
-	private var locationManager = CLLocationManager()
+	lazy private var locationManager = CLLocationManager()
 	
 	override init() {
 		super.init()
@@ -34,15 +35,17 @@ extension LocationManager: CLLocationManagerDelegate {
 			self.locationManager.stopUpdatingLocation()
 		}
 	}
+	
+	func locationManager(_ manager: CLLocationManager, didEnterRegion region: CLRegion) {
+		DispatchQueue.main.async {
+			self.insideNotunBazarArea = true
+		}
+	}
+	
+	func locationManager(_ manager: CLLocationManager, didExitRegion region: CLRegion) {
+		DispatchQueue.main.async {
+			self.insideNotunBazarArea = false
+		}
+	}
 }
 
-//extension MKCoordinateRegion {
-//
-//	static func goldenGateRegion() -> MKCoordinateRegion {
-//		MKCoordinateRegion(center: CLLocationCoordinate2D(latitude: 37.819527098978355, longitude:  -122.47854602016669), latitudinalMeters: 5000, longitudinalMeters: 5000)
-//	}
-//
-//	func getBinding() -> Binding<MKCoordinateRegion>? {
-//		return Binding<MKCoordinateRegion>(.constant(self))
-//	}
-//}
