@@ -39,6 +39,12 @@ struct DetailsView: View {
 						}
 						else {
 							if(data.isAvailable) {
+								if(!data.checkIn) {
+									data.passengers.append(user)
+								}
+								else {
+									data.passengers.removeAll(where: { $0 == user })
+								}
 								data.checkIn.toggle()
 								alreadyInBus.toggle()
 							}

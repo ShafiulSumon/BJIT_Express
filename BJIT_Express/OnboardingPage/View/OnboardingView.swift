@@ -67,6 +67,7 @@ struct OnboardingView: View {
 					TextField("Your Employee Id", text: $employeeId)
 						.frame(width: geometry.size.width * 0.8, height: 60, alignment: .center)
 						.textFieldStyle(.roundedBorder)
+						.keyboardType(.decimalPad)
 					
 					Spacer()
 					
