@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		844D10DB2A178F5C003F5840 /* ManualTimingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844D10DA2A178F5C003F5840 /* ManualTimingView.swift */; };
 		8496D6E02A022A0D00F47388 /* BJIT_ExpressApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8496D6DF2A022A0D00F47388 /* BJIT_ExpressApp.swift */; };
 		8496D6E42A022A0F00F47388 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8496D6E32A022A0F00F47388 /* Assets.xcassets */; };
 		8496D6E72A022A0F00F47388 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8496D6E62A022A0F00F47388 /* Preview Assets.xcassets */; };
@@ -31,6 +32,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		844D10DA2A178F5C003F5840 /* ManualTimingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManualTimingView.swift; sourceTree = "<group>"; };
 		8496D6DC2A022A0D00F47388 /* BJIT_Express.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BJIT_Express.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8496D6DF2A022A0D00F47388 /* BJIT_ExpressApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BJIT_ExpressApp.swift; sourceTree = "<group>"; };
 		8496D6E32A022A0F00F47388 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -66,6 +68,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		844D10D92A178F25003F5840 /* ManualTimingPage */ = {
+			isa = PBXGroup;
+			children = (
+				844D10DC2A178F62003F5840 /* View */,
+			);
+			path = ManualTimingPage;
+			sourceTree = "<group>";
+		};
+		844D10DC2A178F62003F5840 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				844D10DA2A178F5C003F5840 /* ManualTimingView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		8496D6D32A022A0D00F47388 = {
 			isa = PBXGroup;
 			children = (
@@ -93,6 +111,7 @@
 				8496D6FC2A04F27D00F47388 /* HomePage */,
 				8496D7052A05094100F47388 /* DetailsPage */,
 				8496D70E2A08A31F00F47388 /* MapPage */,
+				844D10D92A178F25003F5840 /* ManualTimingPage */,
 				8496D71E2A0B434A00F47388 /* RouteOnMap.swift */,
 				8496D7472A0CB62F00F47388 /* BJIT_Express.xcdatamodeld */,
 				8496D74A2A0CB66400F47388 /* PersistenceController.swift */,
@@ -330,6 +349,7 @@
 				8496D6F52A0259D200F47388 /* HomeView.swift in Sources */,
 				8496D7512A0CEEF700F47388 /* BusInfo.swift in Sources */,
 				8496D71D2A0A382400F47388 /* MapKit+Ext.swift in Sources */,
+				844D10DB2A178F5C003F5840 /* ManualTimingView.swift in Sources */,
 				8496D6F32A022D0500F47388 /* OnboardingView.swift in Sources */,
 				8496D7542A0DE3B700F47388 /* TopBarView.swift in Sources */,
 				8496D7142A09F38600F47388 /* LocationManager.swift in Sources */,

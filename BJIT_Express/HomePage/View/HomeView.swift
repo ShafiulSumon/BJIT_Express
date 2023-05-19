@@ -39,7 +39,8 @@ struct HomeView: View {
 					Spacer()
 
 					NavigationLink() {
-						MapDetailsView()
+//						MapDetailsView()
+						ManualTimingView(arrivalTime: $arrivalTime)
 					} label: {
 						VStack {
 							Spacer()
