@@ -11,13 +11,17 @@ struct CellView: View {
 	
 	@Binding var data: BusInfo
 	
-	private var hour: Int {
-		return data.busDepartureTime/100
-	}
-	private var minute: String {
-		let min = data.busDepartureTime%100
-		return String(format: "%02d", min)
-	}
+//	private var hour: Int {
+//		return data.busDepartureTime/100
+//	}
+//	private var minute: String {
+//		let min = data.busDepartureTime%100
+//		return String(format: "%02d", min)
+//	}
+    
+    private var arrivalTime: String {
+        return DateManager.makeArrivalTime(hour: data.busDepartureTime/100, minute: data.busDepartureTime%100)
+    }
 	
 	var body: some View {
 		VStack {
@@ -38,7 +42,7 @@ struct CellView: View {
 						.background(.gray)
 						.foregroundColor(.white)
 						.cornerRadius(3)
-					Text("\(hour):\(minute) AM")
+					Text(arrivalTime)
 						.fontWeight(.thin)
 				}
 				
