@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1AEBD04D2A1A02E500113D3F /* DateManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AEBD04C2A1A02E500113D3F /* DateManager.swift */; };
 		844D10DB2A178F5C003F5840 /* ManualTimingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844D10DA2A178F5C003F5840 /* ManualTimingView.swift */; };
 		8496D6E02A022A0D00F47388 /* BJIT_ExpressApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8496D6DF2A022A0D00F47388 /* BJIT_ExpressApp.swift */; };
 		8496D6E42A022A0F00F47388 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8496D6E32A022A0F00F47388 /* Assets.xcassets */; };
@@ -32,6 +33,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1AEBD04C2A1A02E500113D3F /* DateManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateManager.swift; sourceTree = "<group>"; };
 		844D10DA2A178F5C003F5840 /* ManualTimingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManualTimingView.swift; sourceTree = "<group>"; };
 		8496D6DC2A022A0D00F47388 /* BJIT_Express.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BJIT_Express.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8496D6DF2A022A0D00F47388 /* BJIT_ExpressApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BJIT_ExpressApp.swift; sourceTree = "<group>"; };
@@ -227,6 +229,7 @@
 			children = (
 				8496D7522A0DE36E00F47388 /* SharedView */,
 				8496D7132A09F38600F47388 /* LocationManager.swift */,
+				1AEBD04C2A1A02E500113D3F /* DateManager.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -342,6 +345,7 @@
 				8496D7072A050A2900F47388 /* DetailsView.swift in Sources */,
 				8496D71F2A0B434A00F47388 /* RouteOnMap.swift in Sources */,
 				8496D6E02A022A0D00F47388 /* BJIT_ExpressApp.swift in Sources */,
+				1AEBD04D2A1A02E500113D3F /* DateManager.swift in Sources */,
 				8496D7042A0500FF00F47388 /* ButtonInfo.swift in Sources */,
 				8496D7022A04FD3F00F47388 /* CellView.swift in Sources */,
 				8496D74D2A0CB80700F47388 /* MotherView.swift in Sources */,

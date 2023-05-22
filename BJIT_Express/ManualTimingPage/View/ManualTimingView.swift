@@ -11,14 +11,35 @@ struct ManualTimingView: View {
 	
 	@Binding var arrivalTime: String
 	@State var selectedTime: Date = Date()
+    @State var showAlert: Bool = false
 	
     var body: some View {
 		VStack {
-			DatePicker(selection: $selectedTime, displayedComponents: .hourAndMinute) {
+            DatePicker(selection: $selectedTime, displayedComponents: .hourAndMinute) {
 				Text("Estimated Time")
 			}
-			.datePickerStyle(.wheel)
-		}
+            .datePickerStyle(.compact)
+            .padding([.leading, .trailing], 25)
+            
+            Spacer().frame(height: 50)
+            
+            Button("Set Time") {
+                let components = Calendar.current.dateComponents([.hour, .minute], from: selectedTime)
+                let hour = components.hour ?? 8
+                let minute = components.minute ?? 5
+                arrivalTime = DateManager.makeArrivalTime(hour: hour, minute: minute)
+                showAlert.toggle()
+            }
+            .padding()
+            .background(.green)
+            .foregroundColor(.white)
+            .cornerRadius(8)
+            .alert("Success", isPresented: $showAlert) {
+            } message: {
+                Text("Estimated time is set properly.")
+            }
+
+        }
     }
 }
 
