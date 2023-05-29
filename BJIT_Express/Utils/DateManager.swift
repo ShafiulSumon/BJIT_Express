@@ -16,4 +16,22 @@ final class DateManager {
         let timeString = "\(_hour):" + String(format: "%02d", minute) + (hour/12 > 0 ? " PM" : " AM")
         return timeString
     }
+	
+	static func currentDate() -> String {
+		let currentDate = Date()
+		
+		let dateFormatter = DateFormatter()
+		dateFormatter.dateFormat = "dd-MM-yyyy"  // Format for day, month, and year
+		
+		return dateFormatter.string(from: currentDate)
+	}
+	
+	static func currentHourMinute() -> Int {
+		let currentDate = Date()
+		
+		let hour = Calendar.current.component(.hour, from: currentDate)
+		let minute = Calendar.current.component(.minute, from: currentDate)
+		
+		return ((hour*100) + minute)
+	}
 }

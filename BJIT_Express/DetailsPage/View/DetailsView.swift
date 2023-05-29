@@ -16,6 +16,8 @@ struct DetailsView: View {
 	var user: String
 	
 	@State private var showAlert: Bool = false
+	@State private var alertMessage: String = ""
+	@State private var flag = false
 	
 	
     var body: some View {
@@ -27,26 +29,44 @@ struct DetailsView: View {
 				TopBarView(user: user)
 				
 				HStack {
-					Text("Available Seats: \(data.availableSeats)(out of 50)")
+					Text("Available Seats: \(data.availableSeats-data.passengers.count)(out of 50)")
 						.font(.title3)
 						.bold()
 
 					Spacer()
-
+					
 					Button {
-						if(alreadyInBus && !data.checkIn) {
+						if(!UserDefaults.standard.bool(forKey: UDKey.buttonActive.rawValue)) {
+							alertMessage = "You need to reach nearby of Natun Bazar Area"
+							showAlert.toggle()
+						}
+						else if(!data.isAvailable) {
+							alertMessage = "This bus is not available right now"
 							showAlert.toggle()
 						}
 						else {
-							if(data.isAvailable) {
-								if(!data.checkIn) {
-									data.passengers.append(user)
-								}
-								else {
+							//global -> true
+							if(UserDefaults.standard.bool(forKey: UDKey.global_check_in.rawValue)) {
+								// if this is my bus
+								if(UserDefaults.standard.string(forKey: UDKey.my_allocated_bus.rawValue) == data.busId) {
+									flag = false
 									data.passengers.removeAll(where: { $0 == user })
+									UserDefaults.standard.set(false, forKey: UDKey.global_check_in.rawValue)
+									UserDefaults.standard.set("", forKey: UDKey.my_allocated_bus.rawValue)
+									detailsVM.update(busInfo: data)
 								}
-								data.checkIn.toggle()
-								alreadyInBus.toggle()
+								else { // other bus
+									// do nothing, or show some alert
+									alertMessage = "You've already Checked-In in another bus"
+									showAlert.toggle()
+								}
+							}
+							else { //global -> false
+								UserDefaults.standard.set(true, forKey: UDKey.global_check_in.rawValue)
+								UserDefaults.standard.set(data.busId, forKey: UDKey.my_allocated_bus.rawValue)
+								flag = true
+								data.passengers.append(user)
+								detailsVM.update(busInfo: data)
 							}
 						}
 					} label: {
@@ -54,7 +74,7 @@ struct DetailsView: View {
 							ButtonInfo(data: .unavailable)
 						}
 						else {
-							if(data.checkIn) {
+							if flag {
 								ButtonInfo(data: .checkOut)
 							}
 							else {
@@ -62,11 +82,11 @@ struct DetailsView: View {
 							}
 						}
 					}
-					.alert("Error", isPresented: $showAlert, actions: {
+					.alert("Error", isPresented: $showAlert) {
 						//
-					}, message: {
-						Text("You have already checkIN in another bus!")
-					})
+					} message: {
+						Text(alertMessage)
+					}
 				}
 				.padding()
 
@@ -120,6 +140,21 @@ struct DetailsView: View {
 				.zIndex(100)
 			}
 			.navigationBarBackButtonHidden()
+		}
+		.onAppear {
+			// global -> false
+			if(!UserDefaults.standard.bool(forKey: UDKey.global_check_in.rawValue)) {
+				flag = false
+			}
+			else {
+				// my allocated bus
+				if(UserDefaults.standard.string(forKey: UDKey.my_allocated_bus.rawValue) == data.busId) {
+					flag = true
+				}
+				else {
+					flag = false
+				}
+			}
 		}
     }
 }

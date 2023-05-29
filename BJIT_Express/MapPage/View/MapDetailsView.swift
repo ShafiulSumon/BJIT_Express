@@ -18,12 +18,19 @@ struct MapDetailsView: View {
 			Map(coordinateRegion: $mapDetailsVM.region, showsUserLocation: true, annotationItems: mapDetailsVM.mapLocations) { location in
 				MapMarker(coordinate: location.coordinate)
 			}
+			
 			.ignoresSafeArea()
 			
 //			MapView(region: $region, destination: $mapDetailsVM.destination)
 //				.ignoresSafeArea()
 //
-//			Map
+			
+			Spacer()
+			
+			Text("Estimated Distance: " + String(format: "%.2f", mapDetailsVM.estimatedDistance) + "(KM)")
+				.padding([.bottom], 30)
+				.font(.title2)
+				.foregroundColor(.pink)
 			
 		}
 		.onAppear() {

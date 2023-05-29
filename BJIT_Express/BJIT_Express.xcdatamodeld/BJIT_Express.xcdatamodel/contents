@@ -1,5 +1,17 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="21754" systemVersion="22D68" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="BUS" representedClassName="BUS" syncable="YES" codeGenerationType="class">
+        <attribute name="busId" optional="YES" attributeType="String"/>
+    </entity>
+    <entity name="BusInformation" representedClassName="BusInformation" syncable="YES" codeGenerationType="class">
+        <attribute name="availableSeats" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="busDepartureTime" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="busId" optional="YES" attributeType="String"/>
+        <attribute name="checkIn" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
+        <attribute name="id" optional="YES" attributeType="String"/>
+        <attribute name="infoDate" optional="YES" attributeType="String"/>
+        <attribute name="isAvailable" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
+    </entity>
     <entity name="ExpressTable" representedClassName="ExpressTable" syncable="YES" codeGenerationType="class">
         <attribute name="employee_id" optional="YES" attributeType="String"/>
     </entity>

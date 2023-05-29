@@ -6,7 +6,19 @@
 //
 
 import Foundation
+import CloudKit
 
 class DetailsVM: ObservableObject {
-	@Published var peoplesInBus: [String] = ["Mr. A", "Mr. B", "Mr. C"]
+	
+	func update(busInfo: BusInfo) {
+		
+		CKManager.shared.update(recordID: busInfo.recordID!, newValues: busInfo.toDictionary()) { newRecord, error in
+			guard error == nil else {
+				print(error as Any)
+				return
+			}
+			print("success update")
+		}
+	}
+	
 }

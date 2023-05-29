@@ -9,7 +9,7 @@ import SwiftUI
 
 struct ManualTimingView: View {
 	
-	@Binding var arrivalTime: String
+	@Binding var arrivalTime: Int
 	@State var selectedTime: Date = Date()
     @State var showAlert: Bool = false
 	
@@ -27,7 +27,8 @@ struct ManualTimingView: View {
                 let components = Calendar.current.dateComponents([.hour, .minute], from: selectedTime)
                 let hour = components.hour ?? 8
                 let minute = components.minute ?? 5
-                arrivalTime = DateManager.makeArrivalTime(hour: hour, minute: minute)
+//                arrivalTime = DateManager.makeArrivalTime(hour: hour, minute: minute)
+				arrivalTime = (hour*100) + minute
                 showAlert.toggle()
             }
             .padding()
@@ -45,6 +46,6 @@ struct ManualTimingView: View {
 
 struct ManualTimingView_Previews: PreviewProvider {
     static var previews: some View {
-		ManualTimingView(arrivalTime: .constant("7: 34 AM"))
+		ManualTimingView(arrivalTime: .constant(0))
     }
 }

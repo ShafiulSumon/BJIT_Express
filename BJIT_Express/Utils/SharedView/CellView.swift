@@ -35,7 +35,7 @@ struct CellView: View {
 				Spacer().frame(width: 50)
 				
 				VStack {
-					Text("\(data.availableSeats)/50")
+					Text("\(data.availableSeats-data.passengers.count)/50")
 						.padding(4)
 						.fontWeight(.black)
 						.border(.gray)
@@ -49,10 +49,10 @@ struct CellView: View {
 				Spacer()
 				
 				if(data.isAvailable) {
-					Text(data.checkIn ? "Check-Out" : "Check-In")
+					Text(UserDefaults.standard.string(forKey: UDKey.my_allocated_bus.rawValue) == data.busId ? "Check-Out" : "Check-In")
 						.font(.caption)
 						.fontWeight(.black)
-						.foregroundColor(data.checkIn ? .red : .green)
+						.foregroundColor(UserDefaults.standard.string(forKey: UDKey.my_allocated_bus.rawValue) == data.busId ? .red : .green)
 						.shadow(radius: 0.8)
 				}
 				else {

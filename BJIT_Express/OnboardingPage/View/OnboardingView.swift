@@ -26,7 +26,7 @@ struct OnboardingView: View {
 			try moc.save()
 		}
 		catch {
-			fatalError("Can't save on CoreData")
+			fatalError("Can't save on CoreData(ExpressTable)")
 		}
 	}
 	
